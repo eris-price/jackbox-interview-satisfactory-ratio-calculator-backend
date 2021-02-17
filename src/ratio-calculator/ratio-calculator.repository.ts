@@ -48,6 +48,13 @@ export class RatioCalculatorRepository {
         ["ironBar", 2]
       ]),
     }],
+    ["ironRod", {
+      id: "ironRod",
+      displayName: "Iron Rod" ,
+      ingredients: new Map([
+        ["ironBar", 1]
+      ]),
+    }],
     ["copperWire", {
       id: "copperWire",
       displayName: "Copper Wire" ,
@@ -55,11 +62,26 @@ export class RatioCalculatorRepository {
         ["copperBar", 0.3333]
       ]),
     }],
+    ["screw", {
+      id: "screw",
+      displayName: "Screw" ,
+      ingredients: new Map([
+        ["ironRod", 0.167]
+      ]),
+    }],
     ["steelBeam", {
       id: "steelBeam",
       displayName: "Steel Beam" ,
       ingredients: new Map([
         ["steelBar", 3]
+      ]),
+    }],
+    ["reinforcedIronPlate", {
+      id: "reinforcedIronPlate",
+      displayName: "Reinforced Iron Plate" ,
+      ingredients: new Map([
+        ["ironPlate", 6],
+        ["screw", 12]
       ]),
     }],
   ]);
