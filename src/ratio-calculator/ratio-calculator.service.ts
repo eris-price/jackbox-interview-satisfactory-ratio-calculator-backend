@@ -32,13 +32,13 @@ export class RatioCalculatorService {
 
       // iterate over all current items, add them to the ingredientMap tracking total ratio multiplier, and get get items to process
       currentItemsToProcess.forEach((ratio, itemId) => {
-        ingredientMap.set(itemId, (ingredientMap.get(itemId)? ingredientMap.get(itemId) : 0) + ratio);
+        ingredientMap.set(itemId, (ingredientMap.get(itemId) || 0) + ratio);
 
         const fullItem = this.repository.getCraftableItemById(itemId);
 
         fullItem.ingredients?.forEach((nextRatio, nextItemId) => {
           nextItemsToProcess.set(nextItemId,
-            (nextItemsToProcess.get(nextItemId)? nextItemsToProcess.get(nextItemId) : 0)
+            (nextItemsToProcess.get(nextItemId) || 0)
              + (nextRatio * ratio)
           );
         });
